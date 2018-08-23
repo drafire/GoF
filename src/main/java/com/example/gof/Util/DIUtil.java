@@ -11,6 +11,18 @@ import java.util.List;
 public abstract class DIUtil<T> {
     private ClassLoader loader = getClass().getClassLoader();
 
+    /**
+     * 获取策略类列表
+     * @param packageName
+     * @return
+     */
+    public List<Class<? extends T>> getDelegateList(String packageName) {
+        List<Class<? extends T>> list;
+        File[] resource = getResources(packageName);
+        list = getList(resource);
+        return list;
+    }
+
     //获取包下的所有class类
     private File[] getResources(String packageName) {
         try {
@@ -28,13 +40,6 @@ public abstract class DIUtil<T> {
         } catch (URISyntaxException e) {
             throw new RuntimeException("未找到策略资源");
         }
-    }
-
-    public List<Class<? extends T>> init(String packageName) {
-        List<Class<? extends T>> list;
-        File[] resource = getResources(packageName);
-        list = getList(resource);
-        return list;
     }
 
     public abstract List<Class<? extends T>> getList(File[] resource);
