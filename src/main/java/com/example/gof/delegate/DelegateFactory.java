@@ -12,7 +12,6 @@ public class DelegateFactory extends DIUtil<Target, TargetPolicy> {
         return null;
     }
 
-    @Override
     public TargetPolicy handleAnnotation(Class<? extends Target> clazz) {
         Annotation[] annotations = clazz.getAnnotations();
         if (annotations == null || annotations.length < 1) {
