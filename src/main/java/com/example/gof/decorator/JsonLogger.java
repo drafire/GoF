@@ -56,6 +56,6 @@ public class JsonLogger extends DecoratorLogger {
     }
 
     private JSONObject composeBasicJsonResult() {//拼装了一些运行时信息
-        return null;
+        return new JSONObject();
     }
 }
