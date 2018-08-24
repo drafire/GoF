@@ -2,7 +2,7 @@ package com.example.gof.abstractFactory;
 
 public class BikeFactory implements VehicleFactory {
     /**
-     * 关键点在于这里，返回一个实体的产品
+     * 关键点在于这里，返回一个实体的产品 
      * @return
      */
     @Override
