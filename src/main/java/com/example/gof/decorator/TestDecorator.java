@@ -1,8 +1,5 @@
 package com.example.gof.decorator;
 
-import org.slf4j.Logger;
-import org.springframework.stereotype.Component;
-
 public class TestDecorator  {
     public static void main(String[] args) {
         Person person=new Person();
