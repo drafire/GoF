@@ -27,7 +27,14 @@ public abstract class DIUtil<T> {
     private File[] getResources(String packageName) {
         try {
             File file = new File(loader.getResource(packageName.replace(".", "/")).toURI());
-            return file.listFiles(new FileFilter() {
+            return file.listFiles((File pathname)->{    //lambda的写法，推荐使用这种写法
+                boolean status=false;
+                if (pathname.getName().endsWith(".class")) { //只扫描class
+                    status= true;
+                }
+                return status;
+            });
+/*            return file.listFiles(new FileFilter() {
                 @Override
                 public boolean accept(File pathname) {
                     boolean status=false;
@@ -36,7 +43,7 @@ public abstract class DIUtil<T> {
                     }
                     return status;
                 }
-            });
+            });*/
         } catch (URISyntaxException e) {
             throw new RuntimeException("未找到策略资源");
         }
