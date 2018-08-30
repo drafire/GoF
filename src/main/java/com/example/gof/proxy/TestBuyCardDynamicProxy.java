@@ -16,12 +16,12 @@ public class TestBuyCardDynamicProxy {
                 new Class[]{BuyCard.class}, new BuyCardDynamicProxy(buyCard));
         buyCardProxy.buycard();
 
-        byte[] classFile= ProxyGenerator.generateProxyClass("$Proxy", new Class<?>[]{BuyCard.class});
-        File file=new File("D:\\java\\GoF\\src\\main\\java\\com\\example\\gof\\proxy/$Proxy.class");
-        FileOutputStream os=new FileOutputStream(file);
-        os.write(classFile);
-        os.flush();
-        os.close();
+//        byte[] classFile= ProxyGenerator.generateProxyClass("$Proxy", new Class<?>[]{BuyCard.class});
+//        File file=new File("D:\\java\\GoF\\src\\main\\java\\com\\example\\gof\\proxy/$Proxy.class");
+//        FileOutputStream os=new FileOutputStream(file);
+//        os.write(classFile);
+//        os.flush();
+//        os.close();
 
     }
 }
