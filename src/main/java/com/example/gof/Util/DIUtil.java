@@ -27,8 +27,8 @@ public abstract class DIUtil<T> {
     private File[] getResources(String packageName) {
         try {
             File file = new File(loader.getResource(packageName.replace(".", "/")).toURI());
-            return file.listFiles((File pathname)->{    //lambda的写法，推荐使用这种写法
-                boolean status=false;
+            return file.listFiles((File pathname)->{    //lambda的写法，推荐使用这种写法。lambda表达式写法：(arg1，arg2)->{执行的代码}
+                boolean status=false;                  //其种，arg1 和arg2 是，@Override里面的方法的参数
                 if (pathname.getName().endsWith(".class")) { //只扫描class
                     status= true;
                 }
